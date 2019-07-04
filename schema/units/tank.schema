@@ -1,0 +1,7 @@
+package units;
+ 
+component Tank {
+    id = 22002;
+    uint32 fuel_quantity = 1;
+    uint32 munition_quantity = 2;
+}

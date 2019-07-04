@@ -27,6 +27,9 @@ namespace BlankProject.Editor
             var snapshot = new Snapshot();
 
             AddPlayerSpawner(snapshot);
+            AddCube(snapshot);
+            AddBall(snapshot);
+            AddTankUnit(snapshot);
             return snapshot;
         }
 
@@ -45,5 +48,35 @@ namespace BlankProject.Editor
 
             snapshot.AddEntity(template);
         }
+
+        private static void AddCube(Snapshot snapshot)
+        {
+            // Invoke our static function to create an entity template of our health pack with 100 heath.
+            var cube = EntityTemplates.Cube(new Vector3f(-11, 6, 30));
+
+            // Add the entity template to the snapshot.
+            snapshot.AddEntity(cube);
+        }
+
+        private static void AddBall(Snapshot snapshot)
+        {
+            // Invoke our static function to create an entity template of our ball.
+            var ball = EntityTemplates.Ball(new Vector3f(-5, 5, 25));
+
+            // Add the entity template to the snapshot.
+            snapshot.AddEntity(ball);
+
+        }
+
+        private static void AddTankUnit(Snapshot snapshot)
+        {
+            // Invoke our static function to create an entity template of our health pack with 100 heath.
+            var tankUnit = EntityTemplates.TankUnit(new Vector3f(5, 5, 5), 110, 16);
+
+            // Add the entity template to the snapshot.
+            snapshot.AddEntity(tankUnit);
+        }
+
+
     }
 }

@@ -1,0 +1,6 @@
+package cubes;
+ 
+component Cube {
+    id = 22000;
+	uint32 angle_value = 1;
+}

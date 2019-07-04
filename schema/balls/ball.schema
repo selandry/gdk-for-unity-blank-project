@@ -1,0 +1,5 @@
+package balls;
+ 
+component Ball {
+    id = 22001;
+}
