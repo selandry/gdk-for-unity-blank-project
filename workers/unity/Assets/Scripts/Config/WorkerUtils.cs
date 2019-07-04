@@ -1,4 +1,4 @@
-namespace BlankProject
+namespace Game
 {
     public static class WorkerUtils
     {

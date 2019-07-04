@@ -7,26 +7,32 @@ using Improbable;
 
 namespace Game
 {
-    //[WorkerType(WorkerUtils.UnityGameLogic)]
-    public class TankServerMovement : MonoBehaviour
+
+    public class TankClientMovement : MonoBehaviour
     {
         [Require] private TankWriter tankWriter;
-        //[Require] private PositionWriter tankPosition;
+        [Require] private PositionWriter tankPosition;
 
         [SerializeField] private uint fuel = 1;
         [SerializeField] private uint munition = 1;
-        //[SerializeField] private Vector3 position;
+        [SerializeField] private Vector3 position;
 
         // Start is called before the first frame update
         void Update()
         {
 
             //InvokeRepeating("UpdateFuel", 1.0f, 2.0f);
-            fuel += 2;
-            munition++;
-            transform.Translate(Vector3.left * Time.deltaTime/2, Space.World);
-            //position = transform.position;
-            //tankPosition.SendUpdate(new Position.Update { Coords = new Coordinates(position.x, position.y, position.z) });
+            fuel++;
+            munition += 3;
+            transform.Translate(Vector3.left * Time.deltaTime/3, Space.World);
+            position = transform.position;
+
+            var spatialPosition = new Position.Update
+            {
+                Coords = new Coordinates(position.x, position.y, position.z)
+            };
+
+            tankPosition.SendUpdate(spatialPosition);          //{ Coords = new Coordinates(position.x, position.y, position.z) });
             tankWriter.SendUpdate(new Tank.Update {FuelQuantity = fuel, MunitionQuantity = munition});
         }
 

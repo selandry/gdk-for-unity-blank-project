@@ -3,7 +3,7 @@ using Improbable.Gdk.Core;
 using Improbable.Gdk.PlayerLifecycle;
 using Improbable.Gdk.TransformSynchronization;
 
-namespace BlankProject
+namespace Game
 {
     public class UnityGameLogicConnector : DefaultWorkerConnector
     {

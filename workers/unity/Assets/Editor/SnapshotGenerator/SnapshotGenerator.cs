@@ -4,7 +4,7 @@ using Improbable.Gdk.PlayerLifecycle;
 using UnityEngine;
 using Snapshot = Improbable.Gdk.Core.Snapshot;
 
-namespace BlankProject.Editor
+namespace Game
 {
     internal static class SnapshotGenerator
     {
@@ -30,6 +30,7 @@ namespace BlankProject.Editor
             AddCube(snapshot);
             AddBall(snapshot);
             AddTankUnit(snapshot);
+            AddTankUnitClient(snapshot);
             return snapshot;
         }
 
@@ -75,6 +76,15 @@ namespace BlankProject.Editor
 
             // Add the entity template to the snapshot.
             snapshot.AddEntity(tankUnit);
+        }
+
+        private static void AddTankUnitClient(Snapshot snapshot)
+        {
+            // Invoke our static function to create an entity template of our health pack with 100 heath.
+            var tankUnitClient = EntityTemplates.TankUnitClient(new Vector3f(-5, 5, -5), 4, 4);
+
+            // Add the entity template to the snapshot.
+            snapshot.AddEntity(tankUnitClient);
         }
 
 

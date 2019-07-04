@@ -2,7 +2,7 @@
 using Cubes;
 using UnityEngine;
 
-namespace BlankProject
+namespace Game
 {
     [WorkerType(WorkerUtils.UnityClient)]
     public class CubeClientVisibility : MonoBehaviour

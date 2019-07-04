@@ -99,10 +99,11 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5736712367450888251}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 69944a705fe82a84794d9171d6c318ae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   fuel: 1
   munition: 1
+  position: {x: 0, y: 0, z: 0}

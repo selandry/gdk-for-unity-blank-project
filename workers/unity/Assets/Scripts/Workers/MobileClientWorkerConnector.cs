@@ -2,7 +2,7 @@ using Improbable.Gdk.Core;
 using Improbable.Gdk.Mobile;
 using Improbable.Gdk.PlayerLifecycle;
 
-namespace BlankProject
+namespace Game
 {
     public class MobileClientWorkerConnector : DefaultMobileWorkerConnector
     {

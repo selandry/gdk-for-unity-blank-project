@@ -2,7 +2,7 @@ using System.IO;
 using UnityEditor;
 using UnityEngine;
 
-namespace BlankProject.Editor
+namespace Game
 {
     internal class SnapshotEditorWindow : EditorWindow
     {

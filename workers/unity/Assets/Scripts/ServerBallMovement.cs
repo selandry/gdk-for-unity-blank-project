@@ -10,7 +10,7 @@ using Balls;
 using Improbable.Gdk.Movement;
 
 
-namespace BlankProject
+namespace Game
 {
     [WorkerType(WorkerUtils.UnityGameLogic)]
     public class ServerBallMovement : MonoBehaviour

@@ -11,7 +11,7 @@ using Improbable.Gdk.PlayerLifecycle;
 using Cubes;
 using Units;
 
-namespace BlankProject
+namespace Game
 {
     public static class EntityTemplates
     {
@@ -177,6 +177,23 @@ namespace BlankProject
             return entityTemplate;
         }
 
+        public static EntityTemplate TankUnitClient(Vector3f position, uint fuelQuantity, uint munitionQuantity)
+        {
+            // Create a HealthPickup component snapshot which is initially active and grants "heathValue" on pickup.
+            var tankComponent = new Units.Tank.Snapshot(fuelQuantity, munitionQuantity);
+
+            var entityTemplate = new EntityTemplate();
+            entityTemplate.AddComponent(new Position.Snapshot(new Coordinates(position.X, position.Y, position.Z)), WorkerUtils.UnityClient);
+            entityTemplate.AddComponent(new Metadata.Snapshot("TankUnit"), WorkerUtils.UnityClient);
+            entityTemplate.AddComponent(new Persistence.Snapshot(), WorkerUtils.UnityClient);
+            entityTemplate.AddComponent(tankComponent, WorkerUtils.UnityClient/*WorkerUtils.UnityGameLogic*/);
+            entityTemplate.SetReadAccess(WorkerUtils.UnityClient, WorkerUtils.UnityClient);
+            entityTemplate.SetComponentWriteAccess(EntityAcl.ComponentId, WorkerUtils.UnityClient);
+            entityTemplate.SetComponentWriteAccess(Position.ComponentId, WorkerUtils.UnityClient);
+            entityTemplate.SetComponentWriteAccess(Tank.ComponentId, WorkerUtils.UnityClient);
+
+            return entityTemplate;
+        }
 
     }
 }
