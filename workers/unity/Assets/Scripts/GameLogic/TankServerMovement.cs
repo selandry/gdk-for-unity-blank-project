@@ -7,7 +7,7 @@ using Improbable;
 
 namespace Game
 {
-    //[WorkerType(WorkerUtils.UnityGameLogic)]
+    [WorkerType(WorkerUtils.UnityGameLogic)]
     public class TankServerMovement : MonoBehaviour
     {
         [Require] private TankWriter tankWriter;

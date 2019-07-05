@@ -1,6 +1,7 @@
 ﻿using Improbable.Gdk.Core;
 using Improbable.Gdk.PlayerLifecycle;
 using Improbable.Worker.CInterop;
+//using Improbable.Gdk.GameObjectCreation;
 
 namespace Game
 {
@@ -16,6 +17,7 @@ namespace Game
         protected override void HandleWorkerConnectionEstablished()
         {
             PlayerLifecycleHelper.AddClientSystems(Worker.World);
+            //GameObjectCreationHelper.EnableStandardGameObjectCreation(Worker.World);
         }
 
         protected override string SelectDeploymentName(DeploymentList deployments)
